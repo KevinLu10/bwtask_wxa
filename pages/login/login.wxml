@@ -1,0 +1,7 @@
+<!--pages/login/login.wxml-->
+
+<!--<button open-type="getUserInfo"></button>-->
+<view>请先登陆：</view>
+<button class="wx_login_btn" wx:if="{{canIUse}}" disabled="{{disabled}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">使用微信账号登陆
+</button>
+<view wx:if="{{!canIUse}}">请升级微信版本</view>

@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/task_list/task_list",
+    "pages/user/user",
+    "pages/my/my",
+    "pages/new_task/new_task",
+    "pages/login/login",
+    "pages/task/task",
+    "pages/intro/intro"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  }
+}

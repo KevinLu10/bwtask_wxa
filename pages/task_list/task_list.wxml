@@ -1,0 +1,23 @@
+<!--pages/task_list/task_list.wxml-->
+<image class="logo" src="https://ktask.oss-cn-beijing.aliyuncs.com/2a75a8d2834109d7e14463bf4195da12.jpg"></image>
+<view class="intro" bindtap="to_intro">简介</view>
+<view class="row_btns">
+
+    <form bindsubmit="to_new_task" report-submit="{{true}}">
+        <button class=" cols_2 cols_2_1"  formType="submit" >新建</button>
+    </form>
+    <form bindsubmit="to_my" report-submit="{{true}}">
+        <button class=" cols_2 cols_2_2" formType="submit">我的</button>
+    </form>
+</view>
+<view class="logo_txt"> 任务列表：</view>
+<view class='list'>
+    <view class="row" bindtap="to_task" data-taskid="{{item.task_id}}" data-pwd="{{item.pwd}}" wx:for="{{task_list}}">
+        <image class="img_url" src="{{item.img_url}}"></image>
+        <view class="title">{{item.title}}</view>
+        <view class="task_type_str">{{item.task_type_str}}</view>
+        <!--<view class="time">{{item.nickname}}</view>-->
+    </view>
+</view>
+<view class="noitem" wx:if="{{task_list.length==0}}">暂无任务</view>
+

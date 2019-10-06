@@ -1,0 +1,84 @@
+<!--pages/new_task/new_task.wxml-->
+<view class="row">
+    <text class="title">任务类别</text>
+    <view class="content">
+        <radio-group class="radio-group" bindchange="task_type_radio_chg">
+        <label bindchange class="radio" wx:for="{{task_type}}">
+            <radio value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
+        </label>
+        </radio-group>
+    </view>
+    <view class="content" wx:if="{{cur_task_type==0}}">
+        <radio-group class="radio-group" bindchange="work_type_chg">
+        <label bindchange class="radio" wx:for="{{work_type}}">
+            <radio value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
+        </label>
+        </radio-group>
+    </view>
+
+</view>
+<view class="row"  wx:if="{{cur_task_type!=0}}">
+    <text class="title">名称</text>
+    <view class="content">
+        <input placeholder="请输入任务名称" bindinput="input_title" value="{{title}}" />
+
+    </view>
+</view>
+<view class="row">
+    <text class="title">有效期</text>
+    <view class="content">
+        <radio-group class="radio-group" bindchange="ddl_radio_chg">
+
+        <label class="radio" wx:for="{{ddl}}">
+            <radio value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
+        </label>
+        </radio-group>
+    </view>
+</view>
+<view class="row">
+    <text class="title">内容</text>
+    <view class="content">
+        <radio-group class="radio-group" bindchange="c_type_chg">
+
+            <label class="radio" wx:for="{{c_type_radio}}">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
+            </label>
+        </radio-group>
+        <view class="c_content"  wx:if="{{c_type==0}}">
+            <textarea  placeholder="请输入任务内容" bindinput="input_content"></textarea>
+
+        </view>
+        <view class="img_content"  wx:if="{{c_type==1}}">
+            <image mode ="aspectFit" wx:if="{{img_path!=''}}" src="{{img_path}}"></image>
+
+            <button size="mini" bindtap="select_img">选择图片</button>
+            <!--<button bindtap="upload_file_test">上传图片</button>-->
+
+        </view>
+        <view class="audio_content"  wx:if="{{c_type==2}}">
+            <view class="audio_status">{{status}}</view>
+            <button class="btn1"  disabled="{{!valid_start}}"  size="mini" bindtap="start_record">开始录音</button>
+            <button class="btn2" disabled="{{!valid_end}}"  size="mini" bindtap="end_record">结束录音</button>
+            <button  class="btn3" disabled="{{!valid_play}}"   size="mini"   bindtap="play_record">播放录音</button>
+
+
+
+        </view>
+
+    </view>
+</view>
+
+<button disabled="{{!valid_add}}" class="add_task" type="primary" bindtap="add_task">
+    <text wx:if="{{valid_add}}">发布</text>
+    <text  wx:if="{{!valid_add}}">发布中，请等待……</text>
+</button>
+<canvas canvas-id="photo_canvas" style="width:{{canvasWidth}}px;height:{{canvasHeight}}px;position: absolute;left:-1000px;top:-1000px;"></canvas>
+<view style="height:30rpx"></view>
+<!-- <view>
+未压缩图片
+<image style="width:{{canvasWidth2}}px;height:{{canvasHeight2}}px;"  src='{{aaa}}'></image>
+</view>
+<view>
+压缩图片
+<image style="width:{{canvasWidth}}px;height:{{canvasHeight}}px;" src='{{bbb}}'></image>
+</view> -->

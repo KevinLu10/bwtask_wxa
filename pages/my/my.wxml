@@ -1,0 +1,31 @@
+<!--pages/my.wxml-->
+<view class="title">我关注的</view>
+<view class="list">
+    <view class="row" bindtap="to_task" wx:for="{{my.attend}}" data-taskid="{{item.task_id}}" data-pwd="{{item.pwd}}">
+        <image class="img_url" src="{{item.img_url}}"></image>
+        <view class="title">{{item.title}}</view>
+        <view class="task_type_str">{{item.task_type_str}}</view>
+    </view>
+</view>
+<view class="noitem" style="height:100rpx;line-height:100rpx" wx:if="{{my.attend.length==0}}">暂无任务</view>
+
+<view class="title add">我发布的</view>
+<view class="list">
+    <view class="row" bindtap="to_task" wx:for="{{my.add}}" data-taskid="{{item.task_id}}" data-pwd="{{item.pwd}}">
+        <image class="img_url" src="{{item.img_url}}"></image>
+        <view class=" title ">{{item.title}}</view>
+        <view class="task_type_str">{{item.task_type_str}}</view>
+    </view>
+</view>
+<view class="noitem" style="height:100rpx;line-height:100rpx" wx:if="{{my.add.length==0}}">暂无任务</view>
+
+<view class="title">我参与的</view>
+<view class="list">
+    <view class="row" bindtap="to_task" wx:for="{{my.reply}}" data-taskid="{{item.task_id}}" data-pwd="{{item.pwd}}">
+        <image class="img_url" src="{{item.img_url}}"></image>
+        <view class="title">{{item.title}}</view>
+        <view class="task_type_str">{{item.task_type_str}}</view>
+    </view>
+</view>
+<view class="noitem" style="height:100rpx;line-height:100rpx" wx:if="{{my.reply.length==0}}">暂无任务</view>
+

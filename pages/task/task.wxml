@@ -1,0 +1,81 @@
+<view class="row">
+    <view class="task_type">{{task.task_type_str}}</view>
+    <image class="img_url" src="{{task.img_url}}"></image>
+    <view class="nickname">{{task.nickname}}</view>
+    <form bindsubmit="attend" report-submit="{{true}}">
+        <button class="attend" size="mini" wx:if="{{task.is_attend==0}}"  formType="submit" >关注TA</button>
+
+        <!--<button class=" cols_2 cols_2_1"  formType="submit" >新建</button>-->
+    </form>
+    <button class="attend" type="primary" size="mini" wx:if="{{task.is_attend==1}}">已关注</button>
+
+</view>
+
+<view class="title"><text class="large_font">名称：</text>{{task.title}}</view>
+<view class="title"><text class="large_font">内容：</text></view>
+<view wx:if="{{task.c_type==0}}" class="content">
+    {{task.content}}
+</view>
+<view wx:if="{{task.c_type==1}}" class="img_content">
+    <image mode ="aspectFit" src="{{task.c_img_url}}"></image>
+</view>
+<view wx:if="{{task.c_type==2}}" class="audio_content">
+    <button wx:if="{{audio_status=='unplay'}}" size="mini" bindtap="play_record">播放音频</button>
+    <button wx:if="{{audio_status=='play'}}" size="mini" bindtap="pause_record">暂停音频</button>
+</view>
+<view class="title"><text class="large_font">截止时间：</text>{{task.ddl}}</view>
+
+<view wx:if="{{task.type!=2}}">
+    <text class="title"><text class="large_font">已读用户：</text></text>
+    <view class="noitem" style="height:100rpx;line-height:100rpx" wx:if="{{task.read.length==0}}">暂无已读用户</view>
+
+    <view class="read">
+        <view class="read_item" wx:for="{{task.read}}">
+            <image class="img_url" src="{{item.img_url}}"></image>
+            <text >{{item.nickname}}</text>
+        </view>
+    </view>
+</view>
+<view wx:if="{{task.type==2}}">
+    <text class="title"><text class="large_font">接龙用户：</text></text>
+    <view class="noitem" style="height:100rpx;line-height:100rpx" wx:if="{{task.replys.length==0}}">暂无接龙</view>
+
+    <view class="reply">
+        <view class="row"  bindtap="del_reply" wx:for="{{task.replys}}" data-replyid="{{item.reply_id}}" data-userid="{{item.user_id}}">
+            <image class="img_url" src="{{item.img_url}}"></image>
+            <view class="reply_name">{{item.nickname}}</view>
+            <view class="reply_txt">{{item.content}}</view>
+            <button type="warn" wx:if="{{user_id==item.user_id}}" size="mini" class="del_reply_btn">删除</button>
+
+        </view>
+    </view>
+</view>
+<view class="reply_box" wx:if="{{task.type==2}}">
+
+<textarea wx:if="{{task.reply_type==1}}" placeholder="输入接龙内容" bindinput="input_content">
+    <!--{{reply_content}}-->
+</textarea>
+
+    <form bindsubmit="reply" report-submit="{{true}}">
+        <!--<button class=" cols_2 cols_2_1"  formType="submit" >新建</button>-->
+        <button  type="primary" class=""    formType="submit">{{task.reply_type_str}}</button>
+
+    </form>
+    <!--<button class="" bindtap="reply">提交</button>-->
+    <!--<button class="" bindtap="close_reply_box">关闭</button>-->
+
+</view>
+<view style="height:20rpx"></view>
+
+<view class="row_btns">
+
+    <!--<form bindsubmit="to_index" report-submit="{{true}}">-->
+        <button class=" cols_3 cols_3_1" bindtap="to_index"  size="mini" formType="submit" >首页</button>
+    <button wx:if="{{task.user_id==user_id}}" style="padding:0rpx;" class="cols_3 cols_3_2 "  size="mini"  bindtap="del_task">删除任务</button>
+
+    <!--</form>-->
+
+    <form bindsubmit="to_share" report-submit="{{true}}">
+        <button class=" cols_3 cols_3_3"  open-type="share"  size="mini" formType="submit">转发</button>
+    </form>
+</view>

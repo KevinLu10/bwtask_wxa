@@ -1,0 +1,79 @@
+.logo{
+  width:300rpx;
+  height: 300rpx;
+  margin-left:225rpx;
+  margin-top:-60rpx;
+  margin-bottom:-60rpx;
+}
+.list{
+  width:700rpx;
+
+  margin-left:25rpx;
+  position: relative;
+}
+.list .row{
+  width:720;
+  height:80rpx;
+  position: relative;
+  margin:15rpx 0 15rpx 30rpx;
+  position: relative;
+
+}
+.row .img_url{
+  width:60rpx;
+  height:60rpx;
+  position: absolute;
+  top:0;
+  left:0;
+  border-radius:30rpx;
+}
+.row .task_type_str{
+  width:100rpx;
+  height:60rpx;
+  position: absolute;
+  top:0;
+  left:75rpx;
+  text-align: center;
+  font-size:40rpx;
+
+}
+.row .title{
+  width:450rpx;
+  height:60rpx;
+  position: absolute;
+  top:0;
+  left:185rpx;
+  font-size:40rpx;
+}
+
+.logo_txt{
+  width:100%;
+  text-align: center;
+  font-size: 60rpx;
+}
+.row_btns{
+  width:750rpx;
+  height:150rpx;
+  position: relative;
+}
+.cols_2{
+  width:275rpx;
+  height:audo;
+  position: absolute;
+}
+.cols_2_1{
+  top:20rpx;
+  left:50rpx;
+}
+.cols_2_2{
+  top:20rpx;
+  left:425rpx;
+}
+.intro{
+  position: absolute;
+  top:105rpx;
+  right:50rpx;
+  font-size: 40rpx;
+  color:#5b89f2;
+  border:1rpx solid #5b89f2;
+}

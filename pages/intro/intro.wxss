@@ -1,0 +1,8 @@
+/* pages/intro/intro.wxss */
+
+.intro{
+  width:700rpx;
+  margin-left:25rpx;
+  margin-top:25rpx;
+  font-size:45rpx;
+}

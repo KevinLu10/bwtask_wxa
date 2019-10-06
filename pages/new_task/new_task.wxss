@@ -1,0 +1,67 @@
+/* pages/new_task/new_task.wxss */
+.row{
+  margin-top:20rpx;
+}
+.title{
+
+  height:100rpx;
+  padding-left:20rpx;
+}.content{
+   margin-top:20rpx;
+  padding-left:20rpx;
+}
+input{
+  border: 1px solid #D8D8D8;
+  margin-right:10rpx;
+}
+radio {
+  margin: 0 5rpx 0 0rpx;
+
+}
+textarea{
+  margin-top :20rpx;
+  border: 1px solid #D8D8D8;
+  margin-bottom:10rpx;
+}
+.add_task{
+  width:700rpx;
+  margin-left:25rpx;
+}
+.img_content{
+  margin-top:20rpx;
+  width:700rpx;
+  text-align: center;
+}
+.img_content image{
+  width:700rpx;
+
+}
+.img_content button{
+  margin:0 auto;
+  width:250rpx;
+
+}
+.audio_content{
+  margin-top:20rpx;
+  width:700rpx;
+  position: relative;
+  height:150rpx;
+}
+.audio_content button{
+  position: absolute;
+  width:220rpx;
+
+}
+.audio_content .btn1{
+  left:0rpx;
+}
+.audio_content .btn2{
+  left:240rpx;
+}
+.audio_content .btn3{
+  left:480rpx;
+}
+.audio_status{
+  text-align: center;
+}
+

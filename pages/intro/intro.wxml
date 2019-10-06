@@ -1,0 +1,8 @@
+<!--pages/intro/intro.wxml-->
+<view class="intro">
+    <view>班务小广播简介：</view>
+    <view>1：首页可以新建作业通知和接龙；</view>
+    <view>新建接龙转发班群，群成员在小程序接龙，避免刷屏。</view>
+    <view>2：关注发布者，微信可以接收到新通知，方便科任老师和课代表发作业通知。</view>
+    <view>3：右上角黑色三点可以转发朋友使用。</view>
+</view>

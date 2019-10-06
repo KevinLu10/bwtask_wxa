@@ -1,0 +1,20 @@
+/* pages/login/login.wxss */
+page{
+    text-align: center;
+    background-color: white;
+}
+view{
+    margin-top:30rpx;
+    margin-left:10rpx;
+    font-size: 30rpx;
+    color: #999999;
+    /*text-align: left;*/
+}
+.wx_login_btn{
+    width:90%;
+    font-size: 35rpx;
+    color: white;
+    background-color: #09bb07;
+    /*border:1rpx solid  #09bb07;*/
+    margin:30rpx auto;
+}
